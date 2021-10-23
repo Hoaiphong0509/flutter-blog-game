@@ -3,6 +3,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import "dart:async";
 import "package:gameblog/details_latest_post.dart";
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:gameblog/Controller/ReviewNews.dart';
+import 'package:gameblog/Controller/EsportNews.dart';
+import 'package:gameblog/Controller/LatestNews.dart';
+import 'package:gameblog/Controller/BlogNews.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key, }) : super(key: key);
@@ -245,7 +249,151 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-          )
+          ),
+
+          SizedBox(height: 6.0,),
+
+          Container(
+            margin: EdgeInsets.all(8.0),
+            height: 300.0,
+            child: Column(
+              children: <Widget>[
+                  // first cont
+                  Container(
+                    child: Row(
+                      children: <Widget>[
+
+                        Expanded(
+                          flex: 1 ,
+                          child: Container(
+                            height: 100.0,
+                            decoration: BoxDecoration(
+                              color: Color(0xFF272b4a),
+                              borderRadius: BorderRadius.circular(15.0)
+                            ),
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: InkWell(
+                                onTap: (){
+                                  Navigator.of(context).push(new MaterialPageRoute(builder: (context) =>
+                                      LatestNews()));
+                                },
+                                child: Text("BREAKING NEWS",
+                                  style: TextStyle(
+                                    fontSize: 19.0,
+                                    color: Colors.white
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+
+                        SizedBox(width: 8.0,),
+
+                        Expanded(
+                            flex: 1,
+                            child: Container(
+                              height: 100.0,
+                              decoration: BoxDecoration(
+                                  color: Color(0xFF272b4a),
+                                  borderRadius: BorderRadius.circular(15.0)
+                              ),
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: InkWell(
+                                    onTap: (){
+                                      Navigator.of(context).push(new MaterialPageRoute(builder: (context) =>
+                                          EsportNews()));
+                                    },
+                                  child: Text("Esport",
+                                    style: TextStyle(
+                                      fontSize: 19.0,
+                                      color: Colors.white
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                        ),
+
+
+
+                      ],
+                    ),
+                  ),
+
+                SizedBox(height: 8.0,),
+                Container(
+                  child: Row(
+                    children: <Widget>[
+
+                      Expanded(
+                        flex: 1,
+                        child: Container(
+                          height: 100.0,
+                          decoration: BoxDecoration(
+                              color: Color(0xFF272b4a),
+                              borderRadius: BorderRadius.circular(15.0)
+                          ),
+                          child: Align(
+                          alignment: Alignment.center,
+                            child: InkWell(
+                              onTap: (){
+                                Navigator.of(context).push(new MaterialPageRoute(builder: (context) =>
+                                    ReviewNews()));
+                              },
+                              child: Text("Review",
+                                style: TextStyle(
+                                    fontSize: 19.0,
+                                    color: Colors.white
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+
+                      SizedBox(width: 5.0,),
+                      Expanded(
+                          flex: 1,
+                          child: Container(
+                            height: 100.0,
+                            decoration: BoxDecoration(
+                              color: Color(0xFF272b4a),
+                              borderRadius: BorderRadius.circular(15.0)
+                            ),
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: InkWell(
+                              onTap: (){
+                                Navigator.of(context).push(new MaterialPageRoute(builder: (context) =>
+                                    BlogNews()));
+                              },
+                              child: Text("Blog",
+                                style: TextStyle(
+                                  fontSize: 19.0,
+                                  color: Colors.white
+                                ),
+                               ),
+                            ),
+                          ),
+                          )
+                      )
+
+
+                    ],
+                  ),
+                )
+
+              ],
+            ),
+          ),
+
+
+
+
+
           //Second Carousel Container end
         ],
       ),
