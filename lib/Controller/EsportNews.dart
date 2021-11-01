@@ -14,7 +14,7 @@ class _EsportNewsState extends State<EsportNews> with SingleTickerProviderStateM
 
   @override
   void initState() {
-    controller = new TabController(length: 2, vsync: this);
+    controller = new TabController(length: 1, vsync: this);
     super.initState();
   }
 
@@ -29,30 +29,16 @@ class _EsportNewsState extends State<EsportNews> with SingleTickerProviderStateM
     return new Scaffold(
 
       appBar: AppBar(
-        title: Text("Esport"),
+        title: Text("ESPORT NEWS"),
         backgroundColor: Color(0xFF272b4a),
-
-        bottom: TabBar(
-          controller: controller,
-          indicatorColor: Colors.blueGrey,
-          indicatorWeight: 5.0,
-          tabs: <Widget>[
-            new Tab(icon: Icon(Icons.view_headline), text:"Esport",),
-            new Tab(icon: Icon(Icons.image), text:"Gallery", )
-          ],
-
-        ),
       ),
 
       body: TabBarView(
         controller: controller,
         children: <Widget>[
           allnews.EsportNews(),
-          gallery.EsportNews_Gallery()
-
         ],
       ),
-
     );
   }
 }

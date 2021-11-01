@@ -107,7 +107,7 @@ class _LatestNewsState extends State<LatestNews> {
                                               height: 5.0,
                                             ),
                                             Text(
-                                              "${snapshot.data[index].data()['content2']}",
+                                              "${snapshot.data[index].data()['content2']}".substring(0, 100),
                                               style: TextStyle(
                                                   fontSize: 15.0,
                                                   color: Colors.white),

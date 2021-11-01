@@ -17,6 +17,7 @@ class _ReviewNewState extends State<ReviewNew> {
 
   Future getallPost() async {
     var firestore = FirebaseFirestore.instance;
+    //Giống tên bảng trong FIREBASE
     QuerySnapshot snapshot=await firestore.collection("ReviewGame").get();
     return snapshot.docs;
   }
@@ -107,7 +108,7 @@ class _ReviewNewState extends State<ReviewNew> {
                                               height: 5.0,
                                             ),
                                             Text(
-                                              "${snapshot.data[index].data()['content2']}",
+                                              "${snapshot.data[index].data()['content2']}".substring(0, 100),
                                               style: TextStyle(
                                                   fontSize: 15.0,
                                                   color: Colors.white),
