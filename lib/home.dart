@@ -61,6 +61,7 @@ class _HomeState extends State<Home> {
                 ),
                 onTap: () {
                   Navigator.of(context).pop();
+                  Navigator.of(context).push(new MaterialPageRoute(builder: (context)=> LatestNews()));
                 },
                 leading: const Icon(
                   Icons.pages,
@@ -75,6 +76,7 @@ class _HomeState extends State<Home> {
                 ),
                 onTap: () {
                   Navigator.of(context).pop();
+                  Navigator.of(context).push(new MaterialPageRoute(builder: (context)=> EsportNews()));
                 },
                 leading: const Icon(
                   Icons.games,
@@ -89,6 +91,7 @@ class _HomeState extends State<Home> {
                 ),
                 onTap: () {
                   Navigator.of(context).pop();
+                  Navigator.of(context).push(new MaterialPageRoute(builder: (context)=> ReviewNews()));
                 },
                 leading: const Icon(
                   Icons.reviews,
@@ -103,6 +106,7 @@ class _HomeState extends State<Home> {
                 ),
                 onTap: () {
                   Navigator.of(context).pop();
+                  Navigator.of(context).push(new MaterialPageRoute(builder: (context)=> BlogNews()));
                 },
                 leading: const Icon(
                   Icons.analytics,
@@ -316,9 +320,6 @@ class _HomeState extends State<Home> {
                               ),
                             ),
                         ),
-
-
-
                       ],
                     ),
                   ),
@@ -389,10 +390,6 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
-
-
-
-
 
           //Second Carousel Container end
         ],
